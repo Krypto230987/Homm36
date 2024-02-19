@@ -1,0 +1,14 @@
+SELECT
+    products.product AS "Название товара",
+    suppliers.supplier AS "Поставщик",
+    date(actions.action_date) AS "Дата поступления"
+FROM
+actions
+INNER JOIN
+    products ON actions.product_id = products.id
+INNER JOIN
+    suppliers ON actions.supplier_id = suppliers.id
+WHERE
+    actions.action_date BETWEEN '2016-01-01' AND '2016-01-31'
+    ORDER BY
+    action_date DESC

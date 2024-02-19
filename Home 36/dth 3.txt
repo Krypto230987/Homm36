@@ -1,0 +1,4 @@
+SELECT DISTINCT 
+products.product AS "Название товара"  
+FROM actions
+JOIN products ON actions.product_id = products.id
